@@ -1,0 +1,17 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: auto;
+  max-width: 80vw;
+}
+
+h1{
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

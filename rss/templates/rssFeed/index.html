@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <h1>New York Yankees Top News Headlines</h1>
+    <button id="refresh">Refresh Feed</button><span id='cookie_counter'></span>
+    <div id="headlines">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+  </body>
+</html>
