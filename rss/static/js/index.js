@@ -3,11 +3,13 @@ const getFeed = () => {
     type: 'GET',
     dataType: 'json',
     url: '/rss/get_feed',
-    // url: 'http://localhost:8000/get_feed',
     success: data => {
       $('#cookie_counter').html(data['cookies'])
       const headlines = $('<ul />')
       for (let i = 0; i < 10; i++) {
+        if (!data['data'][i]['author']) {
+          data['data'][i]['author'] = 'Unknown'
+        }
         headlines.append(`
           <li><a href="${data['data'][i]['link']}" target="_blank"><h3>${data['data'][i]['title']}</h3></a>
             <ul>
