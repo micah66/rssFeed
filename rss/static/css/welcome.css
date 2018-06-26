@@ -1,0 +1,12 @@
+p {
+  text-align: center;
+}
+#yankees-logo {
+  background-image: url('/static/images/Yankees_logo.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+}

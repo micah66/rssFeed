@@ -7,6 +7,10 @@ from datetime import datetime
 from .models import Headlines
 
 # Create your views here.
+def welcome(request):
+    return render(request, 'rssFeed/welcome.html')
+
+
 def get_feed(request):
     feed = f.parse('http://mlb.mlb.com/partnerxml/gen/news/rss/nyy.xml')
     feed_list = [i for i in feed['entries'] if i['link']]
@@ -18,7 +22,7 @@ def get_feed(request):
     if request.COOKIES.get('refresh_count'):
         message = f'Welcome back! The headlines were lasted refreshed at: {datetime.now()}'
     else:
-        message = 'Welcome!'
+        message = 'Hello stranger!'
     context = {
         'data': feed_list,
         'cookies': message,

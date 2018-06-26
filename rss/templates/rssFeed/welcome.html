@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <h1>New York Yankees Top News Headlines</h1>
+    <div id="yankees-logo">
+
+    </div>
+    <p>click <a href="{% url 'get_feed' %}">here</a> to see headlines</p>
+  </body>
+</html>
