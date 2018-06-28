@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <nav>
+      <ul id="nav-list">
+        <li class="nav-left"><a href="{% url 'welcome'%}">Welcome</a></li>
+        <li class="nav-left"><a href="{% url 'get_feed'%}">RSS Feed</a></li>
+        <li class="nav-right">
+          <form id="search-form" action="{% url 'get_feed' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="search_criteria" value="" />
+            <button type="submit" name="button">Search</button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>

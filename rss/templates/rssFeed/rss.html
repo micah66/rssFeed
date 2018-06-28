@@ -1,13 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <title></title>
-  </head>
-  <body>
+{% extends 'rssFeed/base.html' %}
+    {% block content %}
     <h1>New York Yankees Top News Headlines</h1>
     {{ cookies }}
     <div id="headlines">
@@ -16,7 +8,7 @@
         {% if forloop.counter < 11 %}
         <li><a href="{{ i.link }}" target="_blank"><h3>{{ i.title }}</h3></a>
           <ul>
-            <li>Author: {{ i.author }}</li>
+            <li>Author: {{ i.author|default:'Unknown' }}</li>
             <li>Published: {{ i.published }}</li>
             <li>{{ i.summary }}</li>
           </ul>
@@ -25,5 +17,4 @@
         {% endfor %}
       </ul>
     </div>
-  </body>
-</html>
+    {% endblock content %}

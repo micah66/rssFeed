@@ -15,3 +15,18 @@ li {
 a {
   text-decoration: none;
 }
+
+#nav-list {
+  color: white;
+  background-color: #30407a;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+}
+
+#nav-list a:visited {
+  color:inherit;
+}

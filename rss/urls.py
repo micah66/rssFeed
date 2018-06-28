@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.welcome, name='welcome'),
-    url(r'^get_feed', views.get_feed, name='get_feed'),
+    url(r'^welcome', views.welcome, name='welcome'),
+    url(r'^rss', views.get_feed, name='get_feed'),
 ]
